@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- Page settings which links to the css and js files as well fixes issues with viewing and titles the tab appropriately -->
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>The Road of Young Deaths</title>
+    <link rel="stylesheet" type="text/css" href="style.css"></link>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="myscript.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/regression/2.0.1/regression.min.js'></script>
+  </head>
+  
+  <!-- With naming, I tried to give classnames(.) to whole sections which has multiple tags within it and idnames(#) to single tags that have unique stylings or are for Plotly graphs in javascript -->
+  <body>
+    <img src="Images/xuan-nguyen-mZsxnafu53U-unsplash.jpg" alt='Road way' id="titleImage" width="100%" height="600px"/>
+            <!-- In all the references which credits an image, the facts or data, I added target=_"blank" to have the link when clicked open in a new tab which I found how to do from a website post.
+            Reference: mwinya. (2018, August 1). 'How to open Custom HTML Link to open in new tab'. Wordpress. Retrieved from https://wordpress.com/forums/topic/how-to-open-custom-html-link-to-open-in-new-tab/#:~:text=You%20can%20make%20a%20HTML,this%20after%20the%20link%20address. -->
+            <p id="titleCredit">Photo by <a href="https://unsplash.com/@darthxuan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Xuan Nguyen</a> on <a href="https://unsplash.com/s/photos/road-landscape?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Unsplash</a></p>
+            <div id="headings">
+                <h1>The Road of Young Deaths</h1>
+                <h3>The Importance of Teaching Children About Road Safety</h3>
+                <h4>Written by Trisha Vincent (tvin4411)</h4>
+            </div>
+
+    <!-- Navigation bar -->
+    <!-- I learnt to do this during the DECO1016 class as I was doing an assignment. This navigation bar is further stylised in CSS where I have taken out the dot points and used float to make it horizontal.
+         To make it travel to the appropriate part of the page I used id names and hyperlinks. -->
+    <nav id="menu">
+        <ul>
+            <li><a href="#headings">The Road of Young Deaths</a></li>
+            <li><a href="#statsBorder">The Facts</a></li>
+            <li><a href="#futureBorder">The Future</a></li>
+            <li><a href="#safeBorder">Being Road Safe</a></li>
+            <li><a href="#footer">Credits</a></li>
+        </ul>
+    </nav>
+
+    <!-- These page-container and content-wrap divs helped distinguish parts of my page and allow me to position my footer to always be at the bottom.
+    Reference: Fraser, D. (2018, July 6). 'How to keep your footer where it belongs?'. freeCodeCamp. Retrieved from https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/-->
+    <div class="page-container">
+        <div class="content-wrap">
+            <!-- Introduction - Summary & Child Mortality Graph Per World Health Organisation Region -->
+            <section class="intro">
+                <div class="section-content">
+                <!-- Graph 1: Plot of the Child Mortality Rates Per WHO Region -->
+                <div id="GlobalCM"></div>
+                    <p>Since 1950, the <strong>global child mortality rate is going down</strong> and the numbers are predicted to go even lower in the later years.
+                        We have come a long way since then, mainly due to efforts from <strong>skilled individuals; more accessible nutrition; increased knowledge and awareness; and
+                        overall improvement of water, sanitation and hygiene</strong>. 
+                        <br><br> 
+                        However, there is still much to be done in regards to another kind of epidemic in child mortality, that is <strong>road-traffic accidents leading to fatal injuries.</strong>
+                    </p>
+                    <p id="fact">
+                        In 2017, there was a total of <strong>49,068</strong> under 5 deaths by road-traffic accidents worldwide.<br>
+                        <a href="https://ourworldindata.org/grapher/road-incident-deaths-by-age?country=~OWID_WRL" id="smallCredit" target="_blank">(IHME, Global Burden of Disease)</a>
+                        <!-- Reference: IHME, Global Burden of Disease. (n.d.). 'Deaths from road incidents, by age, World, 1990 to 2017'. Our World in Data. Retrieved from https://ourworldindata.org/grapher/road-incident-deaths-by-age?country=~OWID_WRL -->
+                    </p>
+                </div>
+            </section>
+
+            
+            <!-- Statistics on the Child Mortality Rate per WHO region and the number of deaths from injuries. 
+                To be honest, I couldn't really find any specific numbers on how many of the injuries were caused by road-traffic accidents, 
+                but the closest and most relevant data I added was the amount based on injuries in general from World Health Organisation data.
+                Reference: World Health Organisation. (n.d.). 'Number of deaths in children aged <5, by cause'. Retrieved from https://www.who.int/data/gho/data/indicators/indicator-details/GHO/number-of-deaths -->
+            <section class="stats">
+                <div id="statsBorder"></div>
+                <div class="section-content">
+                    <h2>The Facts</h2>
+                    <h4>Under 5 deaths by injuries per region (categorised by World Health Organisation).</h4>
+                    <p id="note">Note: Some of the numbers here do not just include road-related fatalities but also may include deaths from drowning and others.</p>
+                    <table class="regionFacts">
+                        <tr>
+                            <th>Region</th>
+                            <th>2012</th>
+                            <th>2017</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <!-- Reference: icons8. (n.d.). 'Africa Icon' [Image]. Retrieved from https://www.visualpharm.com/free-icons/africa-595b40b75ba036ed117d5024 -->
+                                <a href="#footer"><img src="Images/african-region.png" alt="Africa Region Icon"/></a>
+                                <h3 id="Africa">Africa</h3>
+                            </td>
+                            <td id="pos">153,953</td>
+                            <td id="neg">163,143</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <!-- Reference: Koyamada International Foundation (n.d.). 'Europe' [Image]. Retrieved from http://koyamada.org/where/europe/ -->
+                                <a href="#footer"><img src="Images/european-region.png" alt="Europe Region Icon"/></a>
+                                <h3 id="Europe">Europe</h3>
+                            </td>
+                            <td id="neg">8,556</td>
+                            <td id="pos">7,016</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <!-- Reference: World Health Organization. (n.d.). 'Immunization, Vaccines and Biologicals' [Image]. Retrieved from https://www.who.int/immunization/monitoring_surveillance/data/EMR/en/ -->
+                                <a href="#footer"><img src="Images/eastern-mediterranean-region.PNG" alt="Eastern Mediterranean Region Icon"/></a>
+                                <h3 id="EastMed">Eastern<br>Mediterranean</h3>
+                            </td>
+                            <td id="neg">55,862</td>
+                            <td id="pos">55,039</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <!-- Reference: The Estée Lauder Companies. (2020). 'The Americas' [Image]. Retrieved from https://www.elcompanies.com/en/who-we-are/global-operations/the-americas -->
+                                <a href="#footer"><img src="Images/americas-region.PNG" alt="Americas Region Icon"/></a>
+                                <h3 id="Americas">Americas</h3>
+                            </td>
+                            <td id="neg">18,346</td>
+                            <td id="pos">16,532</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <!-- Reference: Grajeda, T. (n.d.). 'southeast asia' [Image]. Retrieved from https://thenounproject.com/term/southeast-asia/416784/ -->
+                                <a href="#footer"><img src="Images/south-east-asia-region.png" alt="South-East Asia Region Icon"/></a>
+                                <h3 id="SouthEastAsia">South-East Asia</h3>
+                            </td>
+                            <td id="neg">75,276</td>
+                            <td id="pos">59,252</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <!-- Reference: AltonFkzpv. (2017). 'Asia - Southeast Asia United States Asia-Pacific Europe, The Middle East and Afirca PNG' [Image]. Retrieved from https://favpng.com/png_view/asia-southeast-asia-united-states-asia-pacific-europe-the-middle-east-and-africa-png/XeGqe7Mt -->
+                                <a href="#footer"><img src="Images/western-pacific-region.png" alt="Western Pacific Region Icon"/></a>
+                                <h3 id="WestPacific">Western Pacific</h3>
+                            </td>
+                            <td id="neg">45,752</td>
+                            <td id="pos">35,286</td>
+                        </tr>
+                    </table>
+                    <h4 id="quote">
+                        <strong>“</strong>   Between 2013 and 2016, no reductions in the number of road traffic deaths were observed in any low-income countries.   <strong>„</strong>
+                        <br>
+                        <a href="https://www.who.int/publications/i/item/9789241565684" id="smallCredit" target="_blank">(Global status report on road safety, 2018)</a>
+                        <!-- Reference: World Health Organisation. (2018, June 17). 'Global status report on road safety 2018'. Retrieved from https://www.who.int/publications/i/item/9789241565684 -->
+                    </h4>
+                    <!-- Graph 2: Stats on who is most vulnerable based on income for each WHO region as well as including why those in lower-income may be at most risk. -->
+                    <div id="incomeDeaths"></div>
+                    <p id="smallCredit"><strong>Source: </strong><a href="https://apps.who.int/iris/bitstream/handle/10665/162176/WHO_NMH_NVI_15.3_eng.pdf?sequence=1" target="_blank">World Health Organization, Global Health Estimates, 2014</a></p>
+                    <!-- Reference: Global Health Estimates. (2014). 'Regional variation in road traffic death rates (per 100 000 population) of children under 18 years of age, worldwide, 2012. World Health Organisation. Retrieved from https://apps.who.int/iris/bitstream/handle/10665/162176/WHO_NMH_NVI_15.3_eng.pdf?sequence=1 -->
+                    <h5>As you can see those in countries with <strong>low income</strong> are the one's <strong>most at risk</strong> and this is because of <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1123095/" target="_blank"><strong>external influences</strong></a> beyond their control such as:</h5>
+                    <!-- Reference: Nantulya, M V., Reich, R M., Takemi T. (2002, May 11). 'The neglected epidemic: road traffic injuries in developing countries'. NCBI. Retrieved from https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1123095/ -->
+                    <table class="risks">
+                        <tr>
+                            <td>
+                                <!-- Reference: Vectors Market. (n.d.). 'Transport - Cars' [Image]. flaticon. Retrieved from https://www.flaticon.com/free-icon/car_741407?term=car&page=1&position=1&page=1&position=1&related_id=741407&origin=search -->
+                                <a href="#footer"><img src="Images/car.png" alt="Car Icon" width="200" height="200"/></a>
+                            </td>
+                            <td>
+                                <!-- Reference: Icon Pond (n.d.). 'Medical - Medical History' [Image]. flaticon. Retrieved from https://www.flaticon.com/free-icon/medical-history_387552?term=doctor&page=1&position=5&page=1&position=5&related_id=387552&origin=search -->
+                                <a href="#footer"><img src="Images/medical-history.png" alt="Medical Test tube, Clipboard and Pen Icon" width="200" height="200"/></a>
+                            </td>
+                            <td>
+                                <!-- Reference: Freepik. (n.d.). 'Train station - Traffic Lights' [Image]. flaticon. Retrieved from https://www.flaticon.com/free-icon/traffic-lights_3267422?term=traffic%20lights&page=1&position=1&page=1&position=1&related_id=3267422&origin=search -->
+                                <a href="#footer"><img src="Images/traffic-lights.png" alt="Traffic Lights Icon" width="200" height="200"/></a>
+                            </td>
+                            <td>
+                                <!-- Reference: Freepik. (n.d.). 'Travel & places emoticons - Hospital' [Image]. flaticon. Retrieved from https://www.flaticon.com/free-icon/hospital_619051?term=hospital&page=1&position=8&page=1&position=8&related_id=619051&origin=search -->
+                                <a href="#footer"><img src="Images/hospital.png" alt="Hospital Icon" width="200" height="200"/></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><p>Growth in motor <br> vechile numbers</p></td>
+                            <td><p>Inadequate public health infastructure</p></td>
+                            <td><p>Poor enforcement of traffic safety regulations</p></td>
+                            <td><p>Poor access to <br> health services</p></td>
+                        </tr>
+                    </table>
+                    <h3 id="mapTitle">2017: Countries that Legislate the Use of Child Restraints</h3>
+                    <!-- These horizontal and vertical lines are for visuals and is used to separate it from the above content -->
+                    <div id="H-Line"></div>
+                    <div id="V-Line"></div>
+                    <table class="map">
+                        <tr>
+                            <td class="MapLegend">
+                                <h1 id="Yes">Yes</li>
+                                <h1 id="No">No</h1>
+                                <h1 id="None">N/A</h1>
+                            </td>
+                            <!-- Graph 3: Plot of the Choropleth Map comparing countries who legislate child restraints -->
+                            <td><div id="ChildRestraintsMap"></div></td>
+                            <p id="smallCredit"><strong>Source: </strong><a href="https://www.who.int/data/gho/data/indicators/indicator-details/GHO/existence-of-a-national-child-restraint-law" target="_blank">World Health Organization</a></p>
+                            <!-- Reference: World Health Organization. (n.d.). 'Existence of a national child-restraint law'. Retrieved from https://www.who.int/data/gho/data/indicators/indicator-details/GHO/existence-of-a-national-child-restraint-law -->
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            
+            <!-- Prediction for the future showing how together by being safe and encouraging a better traffic regulation system can reduce the numbers of child mortality -->
+            <section class="future">
+                <div id="futureBorder"></div>
+                <div class="section-content">
+                    <h2>The Future</h2>
+                    <p>For these numbers to go down, drastic changes need to be made which is going to take a lot of <strong>time and effort from all us</strong>.<br>
+                        But by <strong>collaborating and supporting</strong> each other all over the world as we do our part, we can as early as <strong>2027</strong> significantly reduce the <strong>number of children dying</strong> from fatal injuries like <strong>road-traffic accidents</strong>.</p>
+                    <!-- Graph 4: Filled Area plot which shows how injury-related deaths will be from 2017 to 2027 -->
+                    <div id="futureGraph"></div>
+                    <table class="WHO">
+                        <tr>
+                            <td><a href="https://www.who.int/westernpacific" target="_blank"><img src="Images/WHO West Pac.PNG" alt="WHO West Pacific Logo"/></a></td>
+                            <td><a href="https://www.who.int/southeastasia" target="_blank"><img src="Images/WHO SE Asia.PNG" alt="WHO South-East Logo"/></a></td>
+                            <td><a href="https://www.paho.org/en" target="_blank"><img src="Images/WHO Americas.PNG" alt="WHO Americas Logo"/></a></td>
+                            <td><a href="http://www.emro.who.int/index.html" target="_blank"><img src="Images/WHO East Med.PNG" alt="WHO Eastern Mediterranean Logo"/></a></td>
+                            <td><a href="https://www.euro.who.int/en" target="_blank"><img src="Images/WHO Europe.PNG" alt="WHO Europe Logo"/></a></td>
+                            <td><a href="https://www.afro.who.int/" target="_blank"><img src="Images/WHO Africa.PNG" alt="WHO Africa Logo"/></a></td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            
+            <!-- Research on:
+                    - why children are vulnerable in or around the roads
+                    - what is the most likely cause of death in regards to type of road user
+                    - some tips on how you can ensure a child or safe  
+                I decided to use the table as a way to organise my content into even parts of the section -->
+            <section class="safety">
+                <div id="safeBorder"></div>
+                <div class="section-content">
+                    <h2>Being Road Safe</h2>
+                    <h4>So, what can you do to prevent such devastating incidents from happening?</h4>
+                    <table class="subSections">
+                        <tr>
+                            <td class="reasons">
+                                <div class="image">
+                                    <img src="Images/annie-spratt-kZO9xqmO_TA-unsplash.jpg" alt="Child in a yellow raincoat alone" width="500" height="400"/>
+                                    <p id="smallCredit">Photo by <a href="https://unsplash.com/@anniespratt?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Annie Spratt</a> on <a href="https://unsplash.com/s/photos/child?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Unsplash</a></p>
+                                    <!-- Reference: Spratt, A. (2017, March 17). 'Child' [Image]. Unsplash. Retrieved from https://unsplash.com/photos/kZO9xqmO_TA -->
+                                </div>
+                                <!-- Graph 5: Deaths by road user in 2010 -->
+                                <div id="roadUserType"></div>
+                                <p id="smallCredit"><strong>Source: </strong><a href="https://apps.who.int/iris/bitstream/handle/10665/162176/WHO_NMH_NVI_15.3_eng.pdf?sequence=1" target="_blank">Institute for Health Metrics and Evaluation, 2010</a></p>
+                                <!-- Reference: Institue for Health Metrics and Evaluation. (2010). 'Proportion of road traffic deaths among children*, by type of road user, worldwide, 2010'. World Health Organisation. Retrieved from https://apps.who.int/iris/bitstream/handle/10665/162176/WHO_NMH_NVI_15.3_eng.pdf?sequence=1 -->
+                                <h3>Why are they vulnerable?</h3>
+                                <ul>
+                                    <li>They don't wear restraints or wear it incorrectly.</li>
+                                    <li>Are not seen by drivers when entering or exiting cars due to their smaller stature.</li>
+                                    <li>May distract the driver or engage in some other inappropriate behaviour while driving.</li>
+                                    <li>Don't realise or think about the consequences of their actions.</li>
+                                </ul>
+                                <!-- Reference: Northern Territory Government. (2009). 'Safer roads early childhood background information'. Retrieved from https://nt.gov.au/__data/assets/pdf_file/0020/163091/safer-roads-early-background-information.pdf -->
+                                <p id="fact"><strong>Boys are 3 times</strong> as more likely to be killed in a road traffic accident than girls.<br>
+                                    <a href="https://www.who.int/news-room/fact-sheets/detail/road-traffic-injuries" id="smallCredit" target="_blank">(World Health Organisation, 2020)</a>
+                                    <!-- Reference: World Health Organisation. (2020, Feburary, 7). 'Road traffic injuries'. Retrieved from https://www.who.int/news-room/fact-sheets/detail/road-traffic-injuries -->
+                                </p>
+                            </td>
+                            <td class="TandS"> 
+                                <h3>Tips and Strategies</h3>
+                                <p>Though there is no way to predict an incoming accident, there are rules you can teach your children about road safety and what you can do to help avoid it. According to <a href="https://www.betterhealth.vic.gov.au/health/HealthyLiving/road-and-traffic-safety-for-children" target="_blank">Better Health Channel</a> you can:</p>
+                                <!-- Reference: Better Health Channel. (2017, September 28). 'Road and traffic safety for children' Victoria State Government. Retrieved from https://www.betterhealth.vic.gov.au/health/HealthyLiving/road-and-traffic-safety-for-children -->
+                                <table class="safeTips">
+                                    <tr>
+                                        <td> 
+                                            <a href="#footer"><img src="Images/yoel-j-gonzalez-traffic.jpg" alt="Traffic Environment"/></a>
+                                            <!-- Reference: Gonzalez, J Y. (2017, July 7). 'S T R I P E S' [Image]. Unsplash. Retrieved from https://unsplash.com/photos/omRFB9rakQo -->
+                                            <h4>Talk about the traffic environment.</h4>
+                                        </td>
+                                        <td> 
+                                            <a href="#footer"><img src="Images/jelleke-vanooteghem-holding-hands.jpg" alt="Holding hands with child"/></a>
+                                            <!-- Reference: Vanooteghem, J. (2017, September 21). 'Person holding hands with child' [Image]. Unsplash. Retrieved from https://unsplash.com/photos/3ZfWz1I4XFg -->
+                                            <h4>Hold child’s hand when near cars and explain its importance.</h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 
+                                            <a href="#footer"><img src="Images/chat.png" alt="Parent talking to child"/></a>
+                                            <!-- Reference: talking Parents. (2018, September 14). 'parent talking with child' [Image]. Retrieved from https://www.google.com/url?sa=i&url=https%3A%2F%2Ftalkingparents.com%2Fblog%2Fseptember-2018%2Fthe-benefits-of-positive-parenting&psig=AOvVaw3lx4h8obLlLUGUCxEALxyL&ust=1620627137631000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNDroKb5u_ACFQAAAAAdAAAAABAD -->
+                                            <h4>Explain and get them involved in crossing safely, but you will have the final say.</h4>
+                                        </td>
+                                        <td> 
+                                            <a href="#footer"><img src="Images/jan-baborak-seatbelt.jpg" alt="Man wearing seatbelt while driving"/></a>
+                                            <!-- Reference: Baborak, J. (2020, January 3). 'Young women driver' [Image]. Unsplash. Retrieved from https://unsplash.com/photos/4STq2B24S1k -->
+                                            <h4>Be a good role mode by wearing a seatbelt, obeying road rules, driving courteously and crossing roads.</h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 
+                                            <a href="#footer"><img src="Images/eye-contact-pedistrian-dieter-hawlan.jpg" alt="Eye contact with driver at intersection"/></a>
+                                            <!-- Reference: Hawlan, D. (2015, October 14). 'Safe Crossings: The Power of Eye Contact' [Image]. aps. Retrieved from https://www.psychologicalscience.org/news/motr/safe-crossings-the-power-of-eye-contact.html -->
+                                            <h4>Make them have eye contact with road users, especially at intersections.</h4>
+                                        </td>
+                                        <td> 
+                                            <a href="#footer"><img src="Images/tom-barrett-playground-unsplash.jpg" alt="Playground"/></a>
+                                            <!-- Reference: Barett, T. (2020, April 21). 'Children's playground at Atwater Park' [Image]. Unsplash. Retrieved from https://unsplash.com/photos/fCOiOWKUvK8 -->
+                                            <h4>Involve child in choosing safe places to play.</h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 
+                                            <a href="#footer"><img src="Images/sarah-brown-driveway-unsplash.jpg" alt="Car driveway"/></a>
+                                            <!-- Reference: Brown, S. (2019, May 27). 'Driveway' [Image]. Unsplash. Retrieved from https://unsplash.com/photos/3eg3Iuq-3gQ -->
+                                            <h4>Separate play areas from driveways.</h4>
+                                        </td>
+                                        <td> 
+                                            <a href="#footer"><img src="Images/traffic_education_of_children.png" alt="Traffic education for children"/></a>
+                                            <!-- Reference: Civitas. (2020). 'Regular traffic education for children' [Image]. Retrieved from https://civitas.eu/content/regular-traffic-education-children-0 -->
+                                            <h4>Ask if child’s early childhood service program includes road safety education.</h4>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <p>These are just some of the basic rules you can teach a child.<br>More in-depth strategies can be found <a href="https://nt.gov.au/__data/assets/pdf_file/0020/163091/safer-roads-early-background-information.pdf" target="_blank">here</a>.</p>
+                                <!-- Reference: Northern Territory Government. (2009). 'Safer roads early childhood background information'. Retrieved from https://nt.gov.au/__data/assets/pdf_file/0020/163091/safer-roads-early-background-information.pdf -->
+                            </td>
+                        </tr>
+                    </table>
+                    <h1 id="message"><strong>Educating</strong> is the key to <strong>longer living</strong>. <br> Let that be <strong>your</strong> child. Let that be <strong>every</strong> child.</h1>
+                </div>
+            </section>
+            
+            <section><footer id="footer">
+                <p>A2: Predictive Visualisation Design (DECO3100)</p>
+                <h2>Image References</h2>
+                <ul class="imgRef">
+                    <h3>Facts Section - Regions</h3>
+                    <li>icons8. (n.d.). 'Africa Icon' [Image]. Retrieved from https://www.visualpharm.com/free-icons/africa-595b40b75ba036ed117d5024</li>
+                    <li>Koyamada International Foundation (n.d.). 'Europe' [Image]. Retrieved from http://koyamada.org/where/europe/</li>
+                    <li>World Health Organization. (n.d.). 'Immunization, Vaccines and Biologicals' [Image]. Retrieved from https://www.who.int/immunization/monitoring_surveillance/data/EMR/en/</li>
+                    <li>The Estée Lauder Companies. (2020). 'The Americas' [Image]. Retrieved from https://www.elcompanies.com/en/who-we-are/global-operations/the-americas</li>
+                    <li>Grajeda, T. (n.d.). 'southeast asia' [Image]. Retrieved from https://thenounproject.com/term/southeast-asia/416784/</li>
+                    <li>AltonFkzpv. (2017). 'Asia - Southeast Asia United States Asia-Pacific Europe, The Middle East and Afirca PNG' [Image]. Retrieved from https://favpng.com/png_view/asia-southeast-asia-united-states-asia-pacific-europe-the-middle-east-and-africa-png/XeGqe7Mt</li>
+                </ul>
+                <ul class="imgRef">
+                    <h3>Facts Section - External</h3>
+                    <li>Vectors Market. (n.d.). 'Transport - Cars' [Image]. flaticon. Retrieved from https://www.flaticon.com/free-icon/car_741407?term=car&page=1&position=1&page=1&position=1&related_id=741407&origin=search</li>
+                    <li>Icon Pond (n.d.). 'Medical - Medical History' [Image]. flaticon. Retrieved from https://www.flaticon.com/free-icon/medical-history_387552?term=doctor&page=1&position=5&page=1&position=5&related_id=387552&origin=search</li>
+                    <li>Freepik. (n.d.). 'Train station - Traffic Lights' [Image]. flaticon. Retrieved from https://www.flaticon.com/free-icon/traffic-lights_3267422?term=traffic%20lights&page=1&position=1&page=1&position=1&related_id=3267422&origin=search</li>
+                    <li>Freepik. (n.d.). 'Travel & places emoticons - Hospital' [Image]. flaticon. Retrieved from https://www.flaticon.com/free-icon/hospital_619051?term=hospital&page=1&position=8&page=1&position=8&related_id=619051&origin=search</li>
+                </ul>
+                <ul class="imgRef">
+                    <h3>Safety Section</h3>
+                    <li>Gonzalez, J Y. (2017, July 7). 'S T R I P E S' [Image]. Unsplash. Retrieved from https://unsplash.com/photos/omRFB9rakQo</li>
+                    <li>talking Parents. (2018, September 14). 'parent talking with child' [Image]. Retrieved from https://www.google.com/url?sa=i&url=https%3A%2F%2Ftalkingparents.com%2Fblog%2Fseptember-2018%2Fthe-benefits-of-positive-parenting&psig=AOvVaw3lx4h8obLlLUGUCxEALxyL&ust=1620627137631000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNDroKb5u_ACFQAAAAAdAAAAABAD</li>
+                    <li>Hawlan, D. (2015, October 14). 'Safe Crossings: The Power of Eye Contact' [Image]. aps. Retrieved from https://www.psychologicalscience.org/news/motr/safe-crossings-the-power-of-eye-contact.html</li>
+                    <li>Brown, S. (2019, May 27). 'Driveway' [Image]. Unsplash. Retrieved from https://unsplash.com/photos/3eg3Iuq-3gQ</li>
+                    <li>Vanooteghem, J. (2017, September 21). 'Person holding hands with child' [Image]. Unsplash. Retrieved from https://unsplash.com/photos/3ZfWz1I4XFg</li>
+                    <li>Baborak, J. (2020, January 3). 'Young women driver' [Image]. Unsplash. Retrieved from https://unsplash.com/photos/4STq2B24S1k</li>
+                    <li>Barett, T. (2020, April 21). 'Children's playground at Atwater Park' [Image]. Unsplash. Retrieved from https://unsplash.com/photos/fCOiOWKUvK8</li>
+                    <li>Civitas. (2020). 'Regular traffic education for children' [Image]. Retrieved from https://civitas.eu/content/regular-traffic-education-children-0</li>
+                </ul>
+            </footer></section>
+        </div>
+    </div>
+  </body>
+</html>

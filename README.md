@@ -1,0 +1,15 @@
+# DECO3100-A2-Predictive-Visualisation-Website
+ Assessment 2 for DECO3100
+
+For my visualisation design, I decided to focus on road-traffic accidents leading to fatal injuries, a child mortality cause that is less common. This is a serious concern because unfortunately, it's becoming somewhat of an epidemic in developing countries. So, by focusing on parents/guardians I feel like they would likely empathise and support this as a global issue as they are typically the one's closest to children. Moreover, to encourage them to learn more about this issue I included links to sites with more in-depth information.
+
+When designing my website, I implemented various stylings and features to support the content and data included. For example, I wanted colours that would get the attention and trust of my target audience like orange and blue to highlight the importance of teaching road safety to children at an early age. Furthermore, I utilised the usual associations with certain colours like red for negative and green for positive to showcase how some regions are improving and some are not. In terms of layout, I decided to put the 'Being Road Safe' section at the end because what I want people to at least take from this are the strategies they could follow, but to compensate for the page being long I implemented a navigation menu that sticks while scrolling so that viewers can move to different parts of the page in an instant. 
+
+However, an issue I faced when researching was that I couldn't find exact data on the number of deaths caused by road-accidents for under 5s in each region. To overcome this, I utilised a data source that was as close to it, being injury-related deaths. Nevertheless, I was worried about misleading my audience with the data so I added a disclaimer that states this. Moreover, the other weaknesses that I had to overcome which were noted by my DECO3100 peers were that the images and icons didn't have the same styling; the prediction graph should not go negative; some colours were too bright like red and green and the external influences icons and text were too close together in a circle.
+
+References:
+- World Health Organization. (2020). Children: improving survival and well-being. Retrieved from https://www.who.int/news-room/fact-sheets/detail/children-reducing-mortality
+- Huber, C. (2016, January 13). Child Mortality: Top causes, best solutions. World Vision. Retrieved from https://www.worldvision.org/health-news-stories/child-mortality-causes-solutions
+- Lumpur, K. (2013, May 27). Remarkable Progress in Reducing Child Mortality and Improving Maternal Health. unicef. Retrieved from https://www.unicef.org/media/media_69367.html#:~:text=Rwanda%2C%20Botswana%2C%20and%20Cambodia%20have,rate%20of%20reduction%20of%20mortality.
+- Incredible @rt Department. (n.d.). 'Color Symbolism and Culture'. Retrieved from https://www.incredibleart.org/lessons/middle/color2.htm
+- Coolors (n.d.). 'Create a palette'. Retrieved from https://coolors.co/

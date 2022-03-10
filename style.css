@@ -1,0 +1,579 @@
+/* Throughout the styling, the common things I do is:
+    - position: relative = will from the object's orignial position change where it will be on the page using things like top, bottom, left and right. 
+    - float = for stacking objects like list items and table items so they become horizontal rather than vertical which is usually there orginal layout.
+    - display: block = used for images which when paired with margin-left: auto and margin-right: auto, centers the image within the space its confined in.
+    - selectors = these are things like first-of-type, nth-of-type, last-child etc. which selects a specific child from a parent and so applies styles only to the specified.
+*/
+/* General */
+/* This is for the navigation bar which when a sub-title is selected, it travels to parts of the page more smoothly instead of instantly */
+html {
+    scroll-behavior: smooth;
+}
+/* The body applies to the entire web page, so that everything is set to these parameters  */
+/* As I wanted to hide the vertical scrollbar but keep its functionality, I followed the example in w3schools.
+Reference: w3schools. (n.d.). 'How To Hide Scrollbars With CSS'. Retrieved from https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp */
+body {
+    background-color: #F7F5FB;
+    margin: 0;
+    font-family: Helvetica;
+    overflow-y: scroll;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+html, body {
+    overflow-x: hidden;
+}
+/* The page-container and content-wrap divs are being used to keep all the relevant content contained */
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+a:hover, #fact #smallCredit:hover {
+    color:coral;
+}
+
+/* Image and Title */
+/* Opacity makes the image more transparent where the closer it is to 0, the more invisible it becomes */
+#titleImage {
+    opacity: 0.4;
+}
+#titleCredit{
+    position: relative;
+    top: -3.25em;
+    float: right;
+    padding: 7px;
+    background-color: grey;
+    color: white;
+}
+#titleCredit a {
+    color: white;
+}
+#headings {
+    position: relative;
+    top: -23em;
+    margin: 20px 20px 0 20px;
+    padding: 20px 20px 0 20px;
+}
+#headings h1 {
+    font-size: 80px;
+    color: black;
+    text-shadow: 3px 4px white;
+}
+#headings h3 {
+    position: relative;
+    top: -1.5em;
+    padding: 10px 30px;
+    font-size: 30px;
+    font-style: italic;
+    color: white;
+    background-color: #084887;
+    border-radius: 30px;
+}
+#headings h4 {
+    margin: 0 0 10px 0;
+}
+
+/* Navigation Bar */
+/* The bar is staying in place through the fixed position and is always staying on top of the content with the z-index */
+nav#menu {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    border-top: 6px solid #F58A07;
+    background-color: #084887;
+  }
+  nav#menu ul {
+    width: 100%;
+    margin-top: 0;
+    padding: 0;
+  }
+  nav#menu li {
+    float: left;
+    margin: 0;
+    padding: 10px 40px;
+    border-right: 3px solid white;
+    list-style-type: none;
+  }
+  nav#menu li:first-child {
+    padding: 10px 18em;
+  }
+  nav#menu li:last-child {
+    border-right: none;
+  }
+  nav#menu li:hover {
+    background-color: #909CC2;
+  }
+  nav#menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+/* All Section Contents */
+section {
+    width: 100%;
+    position: relative;
+    top: -22.6em;
+    float: left;
+    clear: both;
+}
+/* The borders are the orange lines which will indicate to the viewer that its a new section */
+#statsBorder, #safeBorder, #futureBorder {
+    width: 80%;
+    height: 7px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #F9AB55;
+}
+section .section-content {
+    padding: 10px 30px;
+}
+section .section-content h2 {
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 60px;
+    color: #084887;
+    text-shadow: 3px 3px white;
+}
+section .section-content h4 {
+    margin-top: 0;
+    text-align: center;
+    font-size: 30px;
+}
+/* The smallCredit is supposed to apply to most of the referencing text */
+section .section-content #smallCredit {
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
+    font-style: italic;
+    text-align: right;
+}
+/* The facts are these blue rectangle text which all follows this styling */
+#fact {
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+    background-color:#084887;
+    color: white;
+}
+
+/* Introduction Section */
+.intro {
+    height: 43em;
+    border-top: 10px solid #F9AB55;
+}
+/* Graph 1 - Child Mortality Rate from 1950 to 2017 per WHO region */
+.intro #GlobalCM {
+    float: left;
+    width: 58em;
+    height: 35em;
+    border: 10px inset #084887;
+    padding: 15px;
+    margin: 25px 30px 20px 10px;
+}
+.intro p:first-of-type {
+    margin: 0;
+    padding: 20px 0;
+    font-size: 20px;
+    line-height: 35px;
+}
+.intro #fact {
+    padding: 20px;
+    margin: 0 0 20px 70%;
+    font-size: 22px;
+    color: white;
+    background-color: #084887;
+}
+.intro #fact #smallCredit {
+    font-size: 15px;
+    position: relative; 
+    right: -10em;
+    color: white;
+}
+
+/* Facts and Statistics section */
+/* The table for this contains all the regional data which all the table description items will be separate and leave an assigned gap
+through border-collapseand border-spacing */
+.stats #note {
+    text-align: center;
+    font-style: italic;
+    font-size: 20px;
+}
+.stats table {
+    border-collapse: separate;
+    border-spacing: 30px;
+    margin: 0;
+}
+
+.stats .regionFacts th {
+    padding: 10px 20px;
+    font-size: 30px;
+    text-align: left;
+    background-color: #d7e1ff;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-left: 20px double #084887;
+}
+/* I learnt how to give the table cells a shadow in w3schools
+https://www.w3schools.com/cssref/css3_pr_box-shadow.asp */
+.stats .regionFacts td {
+    padding: 30px;
+    width: 7em;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.842);
+    text-align: center;
+    box-shadow: 7px 7px 7px #909CC2;
+}
+.stats .regionFacts td:first-of-type {
+    width: 50em;
+}
+/* Centers my region icons within the table. 
+Idea got from: w3schools. (n.d.). "How TO - Center Images". Retrieved from https://www.w3schools.com/howto/howto_css_image_center.asp*/
+.stats .regionFacts td img { 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    height: 300px;
+    padding: 10px 0;
+    opacity: 0.3;
+}
+.stats td h3 {
+    position: absolute;
+    top: 7em;
+    font-size: 4em;
+    text-shadow: 4px 2px #ffdfb8;
+}
+/* The followind id's are the h3 headings for each region which will match the colours seen in the child mortality rate above. */
+.stats .regionFacts td #Africa {
+    left: 4.4em;
+    color: #166ec5;
+}
+.stats .regionFacts td #Europe {
+    top: 13.5em;
+    left: 4.3em;
+    color: orange;
+}
+.stats .regionFacts td #EastMed {
+    top: 19.5em;
+    left: 2.5em;
+    color: rgb(8, 161, 8);
+}
+.stats .regionFacts td #Americas {
+    top: 26.5em;
+    left: 3.5em;
+    color: rgb(216, 0, 0);
+}
+.stats .regionFacts td #SouthEastAsia {
+    top: 33em;
+    left: 2em;
+    color: rgba(105, 38, 194, 0.726);
+}
+.stats .regionFacts td #WestPacific {
+    top: 39em;
+    left: 2em;
+    color: rgba(92, 50, 11, 0.856);
+}
+.stats .regionFacts #pos, .stats .regionFacts #neg {
+    margin: 0;
+    padding: 8px 0;
+    font-weight: bolder;
+    font-size: 60px;
+    text-shadow: 3px 3px black;
+    border-radius: 30px;
+    color: white;
+}
+.stats .regionFacts #pos {
+    background-color: rgb(87, 141, 5);
+}
+.stats .regionFacts #neg {
+    background-color:rgb(165, 2, 2);
+}
+
+.stats #quote {
+    margin: 140px 40px;
+    font-size: 60px;
+    font-style: italic;
+    font-weight: bolder;
+    color: #ec901e;
+}
+.stats #quote strong {
+    font-size: 80px;
+}
+.stats #quote #smallCredit {
+    position: relative;
+    top: -15px;
+    font-size: 20px;
+}
+
+/* Graph 2 - Under 18 Road-traffic Deaths based on income per WHO region */
+.stats #incomeDeaths {
+    padding: 20px;
+    margin: 30px 0 15px 0;
+    border-left: 10px solid #F58A07;
+    border-right: 10px solid #F58A07;
+    border-radius: 30px;
+    background-color: #052a4f;
+}
+.stats h5 {
+    margin: 0;
+    padding: 30px 8em;
+    line-height: 45px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: normal;
+}
+.stats .risks {
+    position: relative;
+    left: 0;
+    padding-bottom: 10px;
+    border-spacing: 3em 10px;
+}
+.stats .risks tr:first-of-type td {
+    width: 300px;
+    height: 250px;
+    padding: 20px;
+    border: 7px solid #084887;
+    border-radius: 100%;
+    background-color: #909CC2;
+}
+.stats .risks td img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.stats .risks tr:last-of-type td p {
+    height: 70px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 7;
+    font-weight: bold;
+    color: black;
+    border-bottom: 5px dashed #ec901e;
+}
+
+/* Graph 3 - Shows what countries legislate the use of child restraints in 2017 */
+.stats .map #ChildRestraintsMap {
+    height: 30em;
+}
+/* I didn't want a colorbar for my choropleth map because the data is supposed to be categorical not numerical.
+   But to compensate this, I created my own legend for this graph instead, positioning within it so that it looks 
+   like it's part of it.  */
+.stats #mapTitle {
+    margin: 50px 0 5px 60px;
+    text-align: left;
+    font-size: 30px;
+}
+.stats #H-Line, .stats #V-Line {
+    position: absolute;
+    top: 292em;
+    padding: 3px;
+    background-color: #084887;
+}
+.stats #H-Line {
+    right: 35px;
+    width: 30em;
+}
+.stats #V-Line {
+    left: 3.5em;
+    width: 0;
+    height: 33em;
+}
+.stats .map .MapLegend {
+    width: 40%;
+    padding: 0;
+}
+.stats .map #Yes, .stats .map #No, .stats .map #None {
+    width: 8em;
+    margin: 30px 65px;
+    padding: 10px 30px;
+    border-radius: 30px;
+    text-align: center;
+    text-shadow: 3px 4px black;
+    font-size: 50px;
+    color: white;
+}
+.stats .map #Yes {
+    background-color: rgb(87, 141, 5);
+}
+.stats .map #No {
+    background-color: rgb(165, 2, 2);
+}
+.stats .map #None {
+    text-shadow: 3px 4px #F9AB55;
+    color: black;
+    border: 1px solid black;
+}
+
+/* Future Section */
+.future p {
+    padding: 0 25px;
+    text-align: center;
+    font-size: 25px;
+}
+.future p strong {
+    color:#F58A07;
+}
+.future #futureGraph {
+    height: 40em;
+    border: 20px inset #084887;
+    padding: 15px;
+}
+.future .WHO {
+    width: 100%;
+    margin: 0 0 65px 0;
+    background-color: #03213f;
+    border-bottom: 10px solid white;
+    box-shadow: 0 10px 10px rgb(199, 196, 196);
+}
+.future .WHO img {
+    width: 180px;
+    height: 100px;
+    padding: 20px 18px;
+}
+.future .WHO img:hover {
+    transform: scale(1.1);
+}
+
+/* Being Road Safe Section */
+.safety table {
+    border-collapse: separate;
+    border-spacing: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.safety .subSections td {
+    padding: 10px;
+}
+.safety .subSections h3 {
+    padding: 35px 15px 0 15px;
+    font-size: 30px;
+    border-top: 5px solid #084887;
+}
+.safety .subSections li, .safety .subSections p {
+    font-size: 25px;
+}
+/* The left sub-section in Being Road Safe */
+.safety .reasons {
+    background-color: #F9AB55;
+    box-shadow: 10px 15px #084887;
+}
+.safety .reasons .image {
+    padding: 10px;
+}
+.safety .reasons #roadUserType {
+    margin: 12px 0;
+}
+.safety .subSections li {
+    padding: 10px 0;
+}
+.safety .reasons #fact {
+    margin-top: 50px;
+}
+.safety .reasons #fact a {
+    position: relative;
+    right: -14em;
+    color: white;
+    font-size: 15px;
+}
+/* The right sub-section in Being Road Safe */
+.safety .TandS {
+    width: 70%;
+    padding: 20px;
+}
+.safety .TandS p {
+    margin: 20px;
+    font-size: 22px;
+    line-height: 30px;
+}
+.safety .TandS .safeTips {
+    border-spacing: 15px;
+}
+.safety .TandS .safeTips td {
+    width: 500px;
+    padding: 5px 0 0 0;
+    background-color: white;
+    border-top: 15px solid #084887;
+}
+.safety .TandS .safeTips td h4 {
+    height: 50px;
+    padding: 10px;
+    margin: 7px 0 0 0;
+    text-align: center;
+    font-size: 16px;
+    background-color: #909CC2;
+    border-bottom: 15px solid #084887;
+}
+.safety .TandS .safeTips img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 290px;
+    height: 250px;
+    border-radius: 20px;
+}
+.safety .TandS p:last-of-type {
+    border-bottom: 5px solid #084887;
+    padding: 20px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bolder;
+}
+.safety #message {
+    margin: 0;
+    padding: 200px 50px;
+    text-align: center;
+    font-weight: lighter;
+    font-size: 60px;
+    color: #084887;
+}
+.safety #message strong {
+    color: #F9AB55;
+}
+
+/* Footer that contains links to websites with more information */
+#footer {
+    position: absolute;
+    bottom: -80em;
+    width: 100%;
+    background-color: #909CC2;
+}
+#footer p {
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+    background-color: #4a5b94a4;
+}
+#footer h2, #footer h3 {
+    text-align: center;
+}
+#footer h2 {
+    margin: 0;
+    padding: 10px 30px;
+    text-decoration: underline;
+    background-color: #F9AB55;
+}
+#footer .imgRef {
+    margin: 0;
+    padding: 0 3.4em;
+    font-style: italic;
+}
+#footer .imgRef h3 {
+    background-color: #F7F5FB;
+    padding: 10px;
+}
+#footer .imgRef li {
+    padding: 5px 0 ;
+    list-style-type: square;
+    list-style-position: inside;
+}
+#footer .imgRef li::marker {
+    color: white;
+    font-size: 25px;
+}
