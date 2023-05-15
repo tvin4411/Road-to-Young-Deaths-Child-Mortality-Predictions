@@ -85,7 +85,7 @@ Plotly.d3.csv("CSV/income.csv", function (err, rows) {
   let layout = {
     title: "<b>Under 18 Road-traffic Deaths Based On Income (2012)</b>",
     barmode: 'group',
-    margin: { l: 185, r: 60, b: 120, t: 90, pad: 15 },
+    margin: { l: 150, r: 100, b: 180, t: 90, pad: 15 },
     paper_bgcolor: "#052a4f",
     plot_bgcolor: "#052a4f",
     font: { size: 20, color: "#F58A07" },
@@ -122,9 +122,8 @@ Plotly.d3.csv("CSV/childRestraints.csv", function (err, rows) {
   }
   let layout = {
     geo: { projection: { type: 'robinson' }, bgcolor:'#F7F5FB' },
-    width: 1000,
-    height: 800,
-    margin: { l: 0, t: 0, r: 250, b: 300 },
+    width: 800,
+    height: 500,
     paper_bgcolor: "#F7F5FB",
     hoverlabel: { font: { size: 17 } }
   };
