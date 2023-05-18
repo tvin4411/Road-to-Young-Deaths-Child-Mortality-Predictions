@@ -94,6 +94,8 @@ nav#menu ul {
     position: fixed;
     top: 0;
     z-index: 3;
+    display: flex;
+    justify-content: center;
     width: 100%;
     margin-top: 0;
     padding: 0;
@@ -110,7 +112,6 @@ nav#menu li {
     border-right: 3px solid white;
 }
 nav#menu a {
-    display: block;
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -587,7 +588,8 @@ Idea got from: w3schools. (n.d.). "How TO - Center Images". Retrieved from https
 
 /* Footer that contains links to websites with more information */
 #footer {
-    width: 100%;
+    width: auto;
+    padding: 10px;
     background-color: #909CC2;
 }
 
@@ -614,14 +616,16 @@ Idea got from: w3schools. (n.d.). "How TO - Center Images". Retrieved from https
 }
 
 #footer .imgRef {
-    margin: 0;
-    padding: 0 3.4em;
+    margin-top: 10px;
+    padding: 0 30px;
     font-style: italic;
+    cursor: pointer;
 }
 
-#footer .imgRef h3 {
-    background-color: #F7F5FB;
+#footer .imgRef summary {
     padding: 10px;
+    background-color: #F7F5FB;
+    font-weight: bold;
 }
 
 #footer .imgRef li {
